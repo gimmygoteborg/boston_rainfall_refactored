@@ -13,24 +13,24 @@ from bayes_stats import bayes_rain_weekend
 # https://www.bwsc.org/environment-education/rainfall-garden
 
 # === Configuration Variables ===
-INPUT_DIR = "."
+INPUT_DIR = "input"
 BASE_CSV = "Rainfall_Garden_2025.csv"
 HOLIDAYS_CSV = "holidays_2025.csv"
-OUTPUT_DIR = "output"
 YEAR = 2025
 
 def main():
+    # Create year-based output directory
+    OUTPUT_DIR = f"output/{YEAR}"
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # Merge monthly CSVs
-    merge_rainfall_data(INPUT_DIR, BASE_CSV)
-
+    merge_rainfall_data(INPUT_DIR, os.path.join(INPUT_DIR, BASE_CSV))
 
     # Build monthly arrays
-    monthly = build_monthly_rainfall(BASE_CSV, YEAR)
+    monthly = build_monthly_rainfall(os.path.join(INPUT_DIR, BASE_CSV), YEAR)
 
     # Load holidays
-    holidays = load_holidays(HOLIDAYS_CSV)
+    holidays = load_holidays(os.path.join(INPUT_DIR, HOLIDAYS_CSV))
 
     # Generate plots
     plot_calendar_heatmap(monthly, holidays, YEAR, os.path.join(OUTPUT_DIR, "calendar_heatmap.png"))

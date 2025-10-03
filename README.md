@@ -1,64 +1,40 @@
 # Boston Rainfall Analysis
 
-This project contains refactored Python code for analyzing historical rainfall data in Boston. It includes data loading, preprocessing, and visualization routines to explore rainfall patterns over time.
+Analyzes historical rainfall data from the Boston Water and Sewer Commission (BWSC).
 
-## 📁 Repository Structure
-
-```
-boston_rainfall_refactored/
-├── data/
-│   └── boston_rainfall.csv         # Rainfall data CSV file
-├── src/
-│   ├── data_loader.py              # Functions for loading and preprocessing data
-│   ├── visualizations.py           # Plotting and visualization utilities
-│   └── main.py                     # Main script to run the analysis
-└── README.md                       # Project description and usage instructions
-```
-
-## 📦 Requirements
-
-Ensure you have Python 3.7+ installed. Install dependencies using:
+## Quick Start
 
 ```bash
-pip install -r requirements.txt
+# Run analysis for 2025 (default)
+python run.py
+
+# Run for different years
+python run.py 2024
+python run.py 2026
 ```
 
-If `requirements.txt` is not provided, the core dependencies are:
-
-- `pandas`
-- `matplotlib`
-- `seaborn`
-
-Install them via:
+## Setup
 
 ```bash
 pip install pandas matplotlib seaborn
 ```
 
-## ▶️ Usage
+## Project Structure
 
-Run the main script:
-
-```bash
-python src/main.py
+```
+├── input/          # Raw CSV data files
+├── output/         # Generated analysis outputs (organized by year)
+├── src/           # Python source code
+└── run.py         # Entry point
 ```
 
-This will load the rainfall data, perform basic preprocessing, and generate summary plots of rainfall trends in Boston.
+## Features
 
-## 📊 Features
+- Year-based analysis with organized outputs
+- Holiday vs. working day rainfall comparison
+- Weekend vs. weekday patterns
+- Calendar heatmaps and statistical analysis
 
-- Daily/Monthly rainfall aggregation
-- Visualization of rainfall trends over years
-- Clean, modular, and refactored codebase
+## Data Source
 
-## 📈 Example Output
-
-Generated plots include:
-
-- Monthly average rainfall
-- Year-over-year rainfall variation
-- Rainfall histogram
-
-## 📬 Contact
-
-For questions or suggestions, feel free to open an issue or submit a pull request.
+[Boston Water and Sewer Commission](https://www.bwsc.org/environment-education/rainfall-garden)
