@@ -7,14 +7,14 @@ Example: python run_analysis.py 2025
 
 import sys
 import os
-from main import main
+from . import main
 
 def run_for_year(year):
     """Run analysis for a specific year."""
     print(f"🌧️ Running rainfall analysis for {year}...")
     
     # Update the year in main.py by modifying the global variable
-    import main
+    from . import main
     main.YEAR = year
     main.BASE_CSV = f"Rainfall_Garden_{year}.csv"
     main.HOLIDAYS_CSV = f"holidays_{year}.csv"

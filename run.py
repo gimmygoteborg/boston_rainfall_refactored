@@ -7,11 +7,8 @@ This script runs the analysis from the project root directory.
 import sys
 import os
 
-# Add src directory to Python path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-
 # Import and run the analysis
-from run_analysis import run_for_year
+from src.run_analysis import run_for_year
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:

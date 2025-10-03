@@ -1,13 +1,13 @@
 import os
-from utils import merge_rainfall_data
-from monthly_arrays import build_monthly_rainfall
-from load_holidays import load_holidays
-from plot_rainy_vs_working import plot_rainy_days_comparison
-from plot_weekend_distribution import plot_weekend_rain_distribution
-from plot_calendar_heatmap import plot_calendar_heatmap
-from plot_rainfall_by_weekday import plot_rainfall_by_weekday
-from plot_avg_precip_vs_days import plot_average_precipitation
-from bayes_stats import bayes_rain_weekend
+from .utils import merge_rainfall_data
+from .monthly_arrays import build_monthly_rainfall
+from .load_holidays import load_holidays
+from .plot_rainy_vs_working import plot_rainy_days_comparison
+from .plot_weekend_distribution import plot_weekend_rain_distribution
+from .plot_calendar_heatmap import plot_calendar_heatmap
+from .plot_rainfall_by_weekday import plot_rainfall_by_weekday
+from .plot_avg_precip_vs_days import plot_average_precipitation
+from .bayes_stats import bayes_rain_weekend
 
 
 # https://www.bwsc.org/environment-education/rainfall-garden
